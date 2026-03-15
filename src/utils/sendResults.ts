@@ -67,5 +67,5 @@ export function sendResultsEmail(
 
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(body)}`;
 
-    window.open(waUrl, '_blank');
+    window.location.href = waUrl;
 }
