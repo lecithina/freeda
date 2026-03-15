@@ -1,6 +1,6 @@
 import type {Question, QuestionnaireValue} from '@refinio/one.models/lib/models/QuestionnaireModel.js';
 
-const RECIPIENT = 'redkeinunsinn@gmail.com';
+const RECIPIENT = 'mail@heyfreeda.com';
 
 function formatValue(answer: QuestionnaireValue[]): string {
     if (answer.length === 0) return '—';

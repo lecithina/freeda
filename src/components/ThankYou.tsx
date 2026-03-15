@@ -29,7 +29,13 @@ export default function ThankYou({onNewQuestionnaire}: Props) {
                 {t('thankYou.title')}
             </h2>
 
-            <p className="max-w-md text-gray-300">{t('thankYou.message')}</p>
+            <div className="max-w-md space-y-4 text-gray-300">
+                {t('thankYou.message')
+                    .split('\n\n')
+                    .map((paragraph, i) => (
+                        <p key={i}>{paragraph}</p>
+                    ))}
+            </div>
 
             <button
                 type="button"

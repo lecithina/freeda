@@ -33,7 +33,7 @@
   },
   "thankYou": {
     "title": "Thank You!",
-    "message": "Your questionnaire has been submitted successfully. Thank you for taking the time to share your needs with us.",
+    "message": "Thank you for taking the time to fill out the questionnaire.\n\nYour answers help us better understand what you need right now and what support might fit your situation. We read everything carefully and as equals. If you indicated that Hey Freeda may contact you, we will reach out through the method you chose. If you prefer no contact at the moment, we will of course treat your information confidentially.",
     "newQuestionnaire": "Fill Another Questionnaire"
   },
   "impressum": {
