@@ -82,10 +82,28 @@ function validateStep(
 ): Map<string, string> {
     const errors = new Map<string, string>();
     for (const q of questions) {
-        if (q.required && q.type !== 'display') {
-            const answer = answers.get(q.linkId);
+        if (q.type === 'display') continue;
+
+        const answer = answers.get(q.linkId);
+
+        // Required field check
+        if (q.required) {
             if (!answer || answer.length === 0) {
                 errors.set(q.linkId, 'required');
+                continue;
+            }
+        }
+
+        // If Sonstiges is selected, the text field must not be empty
+        if (answer && answer.length > 0) {
+            const hasOther = answer.some(
+                a => a.valueCoding?.code === 'other' || a.valueCoding?.code === 'other-open'
+            );
+            if (hasOther) {
+                const otherText = answer.find(a => a.valueString)?.valueString?.trim();
+                if (!otherText) {
+                    errors.set(q.linkId, 'other-text-required');
+                }
             }
         }
     }

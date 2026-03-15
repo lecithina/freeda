@@ -56,7 +56,7 @@ export default function QuestionnaireFlow({state, setAnswer, goNext, goBack}: Pr
             {/* Progress bar */}
             <div className="space-y-2">
                 <div className="flex justify-between text-sm text-gray-400">
-                    <span>{t('questionnaire.progress', {current: currentStep + 1, total: totalSteps})}</span>
+                    <span>{t('questionnaire.section', {current: currentStep + 1, total: totalSteps})}</span>
                     <span>{Math.round(progressPercent)}%</span>
                 </div>
                 <div className="h-2 overflow-hidden rounded-full bg-freeda-gray-light">
@@ -89,7 +89,9 @@ export default function QuestionnaireFlow({state, setAnswer, goNext, goBack}: Pr
                         />
                         {validationErrors.has(question.linkId) && (
                             <p className="text-sm text-freeda-pink">
-                                {t('questionnaire.required')}
+                                {validationErrors.get(question.linkId) === 'other-text-required'
+                                    ? t('questionnaire.otherTextRequired')
+                                    : t('questionnaire.required')}
                             </p>
                         )}
                     </div>

@@ -1576,6 +1576,7 @@ export const NeedsAssessmentNE: Questionnaire = {
                     text: 'अहिले कुन सहयोग सबैभन्दा उपयोगी हुन्छ?',
                     type: 'open-choice',
                     disabledDisplay: 'protected',
+                    maxLength: 3,
                     answerOption: [
                         {
                             valueCoding: {

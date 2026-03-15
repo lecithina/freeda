@@ -1047,6 +1047,7 @@ export const NeedsAssessmentDE: Questionnaire = {
                     text: 'Welche Unterst\u00fctzung w\u00e4re f\u00fcr dich im Moment am hilfreichsten?',
                     type: 'open-choice',
                     disabledDisplay: 'protected',
+                    maxLength: 3,
                     answerOption: [
                         {
                             valueCoding: {

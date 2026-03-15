@@ -13,6 +13,7 @@
     "back": "पछाडि",
     "submit": "पेश गर्नुहोस्",
     "required": "यो फिल्ड आवश्यक छ",
+    "otherTextRequired": "कृपया \"अन्य\" को लागि आफ्नो जवाफ वर्णन गर्नुहोस्।",
     "progress": "चरण {{current}} / {{total}}",
     "selectOption": "एउटा विकल्प छान्नुहोस्",
     "enterText": "आफ्नो जवाफ लेख्नुहोस्",
@@ -20,6 +21,8 @@
     "other": "अन्य",
     "otherPlaceholder": "कृपया खुलाउनुहोस्:",
     "otherPlaceholderOpen": "हामीलाई थप बताउनुहोस्:",
+    "maxSelections": "{{max}} मध्ये {{current}} चयन गरिएको",
+    "section": "खण्ड {{current}} / {{total}}",
     "edit": "सम्पादन"
   },
   "summary": {

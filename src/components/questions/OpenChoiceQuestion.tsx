@@ -21,6 +21,11 @@ export default function OpenChoiceQuestion({question, value, onChange}: Question
     const hasNoneOption = question.answerOption?.some(o => o.valueCoding?.code === 'none');
     const isNoneSelected = selectedCodes.has('none');
 
+    // Max selections (maxLength on open-choice = max number of selections)
+    const maxSelections = question.maxLength;
+    const selectionCount = selectedCodes.size;
+    const isAtLimit = maxSelections !== undefined && selectionCount >= maxSelections;
+
     function toggleOption(code: string) {
         const coding = question.answerOption?.find(o => o.valueCoding?.code === code)?.valueCoding;
         if (!coding) return;
@@ -30,6 +35,9 @@ export default function OpenChoiceQuestion({question, value, onChange}: Question
             onChange(value.filter(v => v.valueCoding?.code !== code));
             return;
         }
+
+        // Don't allow more selections if at limit
+        if (isAtLimit) return;
 
         if (code === 'none') {
             // "nichts davon" selected → clear all others
@@ -58,21 +66,30 @@ export default function OpenChoiceQuestion({question, value, onChange}: Question
 
     return (
         <div className="space-y-2">
+            {maxSelections !== undefined && (
+                <p className="text-sm text-gray-400">
+                    {t('questionnaire.maxSelections', {max: maxSelections, current: selectionCount})}
+                </p>
+            )}
             {question.answerOption?.map(option => {
                 const coding = option.valueCoding;
                 if (!coding?.code) return null;
                 const isSelected = selectedCodes.has(coding.code);
                 const isOther = coding.code === otherCode;
+                const isDisabled = !isSelected && isAtLimit;
 
                 return (
                     <div key={coding.code}>
                         <button
                             type="button"
                             onClick={() => toggleOption(coding.code!)}
+                            disabled={isDisabled}
                             className={`flex min-h-[44px] w-full items-center rounded-lg border px-4 py-3 text-left transition-colors ${
                                 isSelected
                                     ? 'border-freeda-pink bg-freeda-pink/20 text-white'
-                                    : 'border-freeda-gray-light bg-freeda-gray text-gray-300 hover:border-gray-500'
+                                    : isDisabled
+                                      ? 'cursor-not-allowed border-freeda-gray-light bg-freeda-gray text-gray-600 opacity-50'
+                                      : 'border-freeda-gray-light bg-freeda-gray text-gray-300 hover:border-gray-500'
                             }`}
                         >
                             <span

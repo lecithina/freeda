@@ -1528,6 +1528,7 @@ export const NeedsAssessmentEN: Questionnaire = {
                     text: 'What support would be most helpful for you right now?',
                     type: 'open-choice',
                     disabledDisplay: 'protected',
+                    maxLength: 3,
                     answerOption: [
                         {
                             valueCoding: {

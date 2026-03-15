@@ -13,6 +13,7 @@
     "back": "Back",
     "submit": "Submit",
     "required": "This field is required",
+    "otherTextRequired": "Please describe your answer for \"Other\".",
     "progress": "Step {{current}} of {{total}}",
     "selectOption": "Select an option",
     "enterText": "Enter your answer",
@@ -20,6 +21,8 @@
     "other": "Other",
     "otherPlaceholder": "Please specify:",
     "otherPlaceholderOpen": "Tell us more:",
+    "maxSelections": "{{current}} of {{max}} selected",
+    "section": "Section {{current}} of {{total}}",
     "edit": "Edit"
   },
   "summary": {
