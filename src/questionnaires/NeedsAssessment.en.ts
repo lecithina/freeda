@@ -58,7 +58,15 @@ export const NeedsAssessmentEN: Questionnaire = {
                                 system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/age',
                                 version: '1.0',
                                 code: '5',
-                                display: '26+'
+                                display: '26\u201330'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/age',
+                                version: '1.0',
+                                code: '6',
+                                display: 'older than 31'
                             }
                         }
                     ]

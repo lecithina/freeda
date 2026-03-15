@@ -62,7 +62,15 @@ export const NeedsAssessmentNE: Questionnaire = {
                                 system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/age',
                                 version: '1.0',
                                 code: '5',
-                                display: '२६+'
+                                display: '२६–३०'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/age',
+                                version: '1.0',
+                                code: '6',
+                                display: '३१ भन्दा माथि'
                             }
                         }
                     ]
