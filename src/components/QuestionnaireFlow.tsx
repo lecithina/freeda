@@ -1,4 +1,4 @@
-import {useCallback, useEffect} from 'react';
+import {useCallback, useEffect, useRef} from 'react';
 import {useTranslation} from 'react-i18next';
 import type {FlowState} from '../hooks/useQuestionnaireFlow.js';
 import type {QuestionnaireValue} from '@refinio/one.models/lib/models/QuestionnaireModel.js';
@@ -15,6 +15,15 @@ export default function QuestionnaireFlow({state, setAnswer, goNext, goBack}: Pr
     const {t} = useTranslation();
     const {currentStep, totalSteps, currentGroup, visibleQuestions, validationErrors} = state;
     const progressPercent = ((currentStep + 1) / totalSteps) * 100;
+    const topRef = useRef<HTMLDivElement>(null);
+    const prevStep = useRef(currentStep);
+
+    useEffect(() => {
+        if (currentStep !== prevStep.current) {
+            prevStep.current = currentStep;
+            topRef.current?.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+    }, [currentStep]);
 
     const handleKeyDown = useCallback(
         (e: KeyboardEvent) => {
@@ -43,6 +52,7 @@ export default function QuestionnaireFlow({state, setAnswer, goNext, goBack}: Pr
 
     return (
         <div className="space-y-6">
+            <div ref={topRef} />
             {/* Progress bar */}
             <div className="space-y-2">
                 <div className="flex justify-between text-sm text-gray-400">
