@@ -13,7 +13,7 @@
     "back": "Zurück",
     "submit": "Absenden",
     "required": "Dieses Feld ist erforderlich",
-    "otherTextRequired": "Bitte beschreibe deine Antwort bei „Sonstiges".",
+    "otherTextRequired": "Bitte beschreibe deine Antwort bei Sonstiges.",
     "progress": "Schritt {{current}} von {{total}}",
     "selectOption": "Eine Option auswählen",
     "enterText": "Gib deine Antwort ein",
