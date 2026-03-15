@@ -8,6 +8,22 @@ export const NeedsAssessmentEN: Questionnaire = {
     title: 'Needs Assessment',
     status: 'active',
     item: [
+        // ─── Disclaimer ──────────────────────────────────────────────────
+        {
+            linkId: 'disclaimer',
+            text: 'Before you start',
+            type: 'group',
+            disabledDisplay: 'protected',
+            item: [
+                {
+                    linkId: 'disclaimerText',
+                    text: 'Your answers help us better understand what you need right now and how Hey Freeda can support you. Everything you share with us is treated confidentially and will not be passed on to third parties. You don\u2019t have to answer every question if something feels too personal. We will only ask for your contact details at the end.\n\nThank you for taking the time. \uD83D\uDE4F',
+                    type: 'display',
+                    disabledDisplay: 'protected'
+                }
+            ]
+        },
+
         // ─── Group 1: Personal Situation ───────────────────────────────────
         {
             linkId: 'personalInfo',
