@@ -7,6 +7,8 @@ export default function OpenChoiceQuestion({question, value, onChange}: Question
         value.filter(v => v.valueCoding?.code).map(v => v.valueCoding!.code!)
     );
     const otherText = value.find(v => v.valueString)?.valueString ?? '';
+    const hasOtherOption = question.answerOption?.some(o => o.valueCoding?.code === 'other');
+    const isOtherSelected = selectedCodes.has('other');
 
     function toggleOption(code: string) {
         const coding = question.answerOption?.find(o => o.valueCoding?.code === code)?.valueCoding;
@@ -72,13 +74,15 @@ export default function OpenChoiceQuestion({question, value, onChange}: Question
                     </button>
                 );
             })}
-            <input
-                type="text"
-                placeholder={t('questionnaire.other')}
-                value={otherText}
-                onChange={e => updateOtherText(e.target.value)}
-                className="min-h-[44px] w-full rounded-lg border border-freeda-gray-light bg-freeda-gray px-4 py-3 text-white placeholder-gray-500 transition-colors focus:border-freeda-pink focus:outline-none"
-            />
+            {hasOtherOption && isOtherSelected && (
+                <input
+                    type="text"
+                    placeholder={t('questionnaire.otherPlaceholder')}
+                    value={otherText}
+                    onChange={e => updateOtherText(e.target.value)}
+                    className="min-h-[44px] w-full rounded-lg border border-freeda-gray-light bg-freeda-gray px-4 py-3 text-white placeholder-gray-500 transition-colors focus:border-freeda-pink focus:outline-none"
+                />
+            )}
         </div>
     );
 }

@@ -18,6 +18,7 @@
     "enterText": "Gib deine Antwort ein",
     "enterNumber": "Gib eine Zahl ein",
     "other": "Sonstiges",
+    "otherPlaceholder": "Und zwar:",
     "edit": "Bearbeiten"
   },
   "summary": {

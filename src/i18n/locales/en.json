@@ -18,6 +18,7 @@
     "enterText": "Enter your answer",
     "enterNumber": "Enter a number",
     "other": "Other",
+    "otherPlaceholder": "Please specify:",
     "edit": "Edit"
   },
   "summary": {
