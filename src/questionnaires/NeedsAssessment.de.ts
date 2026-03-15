@@ -576,7 +576,7 @@ export const NeedsAssessmentDE: Questionnaire = {
                             valueCoding: {
                                 system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/urgent-need',
                                 version: '1.0',
-                                code: 'other',
+                                code: 'other-open',
                                 display: 'Sonstiges'
                             }
                         }
@@ -906,7 +906,7 @@ export const NeedsAssessmentDE: Questionnaire = {
                             valueCoding: {
                                 system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/german-motivation',
                                 version: '1.0',
-                                code: 'other',
+                                code: 'other-open',
                                 display: 'Sonstiges'
                             }
                         }
@@ -1116,7 +1116,7 @@ export const NeedsAssessmentDE: Questionnaire = {
                             valueCoding: {
                                 system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/helpful-support',
                                 version: '1.0',
-                                code: 'other',
+                                code: 'other-open',
                                 display: 'Sonstiges'
                             }
                         }
