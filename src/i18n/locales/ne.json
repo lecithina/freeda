@@ -21,6 +21,7 @@
     "other": "अन्य",
     "otherPlaceholder": "कृपया खुलाउनुहोस्:",
     "otherPlaceholderOpen": "हामीलाई थप बताउनुहोस्:",
+    "multipleChoice": "धेरै उत्तर सम्भव छ",
     "maxSelections": "{{max}} मध्ये {{current}} चयन गरिएको",
     "section": "खण्ड {{current}} / {{total}}",
     "edit": "सम्पादन"

@@ -21,6 +21,7 @@
     "other": "Sonstiges",
     "otherPlaceholder": "Und zwar:",
     "otherPlaceholderOpen": "Erzähle uns mehr:",
+    "multipleChoice": "Mehrfachauswahl möglich",
     "maxSelections": "{{current}} von {{max}} ausgewählt",
     "section": "Abschnitt {{current}} von {{total}}",
     "edit": "Bearbeiten"

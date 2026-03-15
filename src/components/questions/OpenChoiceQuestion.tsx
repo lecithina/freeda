@@ -66,11 +66,11 @@ export default function OpenChoiceQuestion({question, value, onChange}: Question
 
     return (
         <div className="space-y-2">
-            {maxSelections !== undefined && (
-                <p className="text-sm text-gray-400">
-                    {t('questionnaire.maxSelections', {max: maxSelections, current: selectionCount})}
-                </p>
-            )}
+            <p className="text-sm text-gray-400">
+                {maxSelections !== undefined
+                    ? t('questionnaire.maxSelections', {max: maxSelections, current: selectionCount})
+                    : t('questionnaire.multipleChoice')}
+            </p>
             {question.answerOption?.map(option => {
                 const coding = option.valueCoding;
                 if (!coding?.code) return null;

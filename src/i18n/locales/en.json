@@ -21,6 +21,7 @@
     "other": "Other",
     "otherPlaceholder": "Please specify:",
     "otherPlaceholderOpen": "Tell us more:",
+    "multipleChoice": "Multiple answers possible",
     "maxSelections": "{{current}} of {{max}} selected",
     "section": "Section {{current}} of {{total}}",
     "edit": "Edit"
