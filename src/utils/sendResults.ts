@@ -1,9 +1,9 @@
 import type {Question, QuestionnaireValue} from '@refinio/one.models/lib/models/QuestionnaireModel.js';
 
-const RECIPIENT = 'mail@heyfreeda.com';
+const WHATSAPP_NUMBER = '4915141472058';
 
 function formatValue(answer: QuestionnaireValue[]): string {
-    if (answer.length === 0) return '—';
+    if (answer.length === 0) return '\u2014';
 
     return answer
         .map(v => {
@@ -20,7 +20,7 @@ function formatValue(answer: QuestionnaireValue[]): string {
 }
 
 /**
- * Build a structured plain-text representation of all answers.
+ * Build a compact plain-text representation of all answers for WhatsApp.
  */
 export function buildStructuredOutput(
     groups: Question[],
@@ -29,41 +29,34 @@ export function buildStructuredOutput(
 ): string {
     const timestamp = new Date().toISOString();
     const lines: string[] = [
-        '═══════════════════════════════════════',
-        'HEY FREEDA — NEEDS ASSESSMENT',
+        '*HEY FREEDA \u2014 NEEDS ASSESSMENT*',
         `Date: ${timestamp}`,
         `Language: ${language}`,
-        '═══════════════════════════════════════',
         ''
     ];
 
     for (const group of groups) {
-        lines.push(`── ${(group.text ?? group.linkId).toUpperCase()} ──`);
-        lines.push('');
+        lines.push(`*${(group.text ?? group.linkId).toUpperCase()}*`);
 
         if (group.item) {
             for (const question of group.item) {
                 if (question.type === 'display') continue;
                 const answer = answers.get(question.linkId) ?? [];
-                const label = question.text ?? question.linkId;
                 const value = formatValue(answer);
+                const label = question.text ?? question.linkId;
                 lines.push(`${label}`);
-                lines.push(`→ ${value}`);
+                lines.push(`\u2192 ${value}`);
                 lines.push('');
             }
         }
     }
 
-    lines.push('═══════════════════════════════════════');
-    lines.push('Sent from Hey Freeda Questionnaire App');
-    lines.push('═══════════════════════════════════════');
-
     return lines.join('\n');
 }
 
 /**
- * Send questionnaire results via mailto: link.
- * Opens the user's email client with pre-filled recipient, subject, and body.
+ * Send questionnaire results via WhatsApp (wa.me link).
+ * Opens WhatsApp with pre-filled message to the Hey Freeda number.
  */
 export function sendResultsEmail(
     groups: Question[],
@@ -71,12 +64,8 @@ export function sendResultsEmail(
     language: string
 ): void {
     const body = buildStructuredOutput(groups, answers, language);
-    const subject = `Hey Freeda — Needs Assessment [${new Date().toLocaleDateString()}]`;
 
-    const mailto =
-        `mailto:${RECIPIENT}` +
-        `?subject=${encodeURIComponent(subject)}` +
-        `&body=${encodeURIComponent(body)}`;
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(body)}`;
 
-    window.open(mailto, '_blank');
+    window.open(waUrl, '_blank');
 }
