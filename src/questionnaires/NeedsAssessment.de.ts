@@ -9,6 +9,24 @@ export const NeedsAssessmentDE: Questionnaire = {
     status: 'active',
     item: [
         // ──────────────────────────────────────────────
+        // Disclaimer
+        // ──────────────────────────────────────────────
+        {
+            linkId: 'disclaimer',
+            text: 'Bevor du startest',
+            type: 'group',
+            disabledDisplay: 'protected',
+            item: [
+                {
+                    linkId: 'disclaimerText',
+                    text: 'Deine Antworten helfen uns, besser zu verstehen, was du gerade brauchst und wie Hey Freeda dich unterst\u00fctzen kann. Alles, was du mit uns teilst, behandeln wir vertraulich und geben es nicht an Dritte weiter. Du musst nicht jede Frage beantworten, wenn dir etwas zu pers\u00f6nlich ist. Deine Kontaktdaten fragen wir erst am Ende ab.\n\nDanke, dass du dir die Zeit nimmst. \uD83D\uDE4F',
+                    type: 'display',
+                    disabledDisplay: 'protected'
+                }
+            ]
+        },
+
+        // ──────────────────────────────────────────────
         // Abschnitt 1: Aktuelle Situation
         // ──────────────────────────────────────────────
         {
