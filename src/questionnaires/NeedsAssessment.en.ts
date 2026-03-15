@@ -1640,17 +1640,8 @@ export const NeedsAssessmentEN: Questionnaire = {
                                 system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contactWish',
                                 code: '1'
                             }
-                        },
-                        {
-                            question: 'contactWish',
-                            operator: '=',
-                            answerCoding: {
-                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contactWish',
-                                code: '2'
-                            }
                         }
                     ],
-                    enableBehavior: 'any',
                     answerOption: [
                         {
                             valueCoding: {
@@ -1690,7 +1681,17 @@ export const NeedsAssessmentEN: Questionnaire = {
                     linkId: 'contactDetails',
                     text: 'Your contact details',
                     type: 'string',
-                    disabledDisplay: 'protected'
+                    disabledDisplay: 'protected',
+                    enableWhen: [
+                        {
+                            question: 'contactWish',
+                            operator: '=',
+                            answerCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contactWish',
+                                code: '1'
+                            }
+                        }
+                    ]
                 }
             ]
         }

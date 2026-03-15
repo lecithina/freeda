@@ -1689,16 +1689,8 @@ export const NeedsAssessmentNE: Questionnaire = {
                             answerCoding: {
                                 code: '1'
                             }
-                        },
-                        {
-                            question: 'contactWish',
-                            operator: '=',
-                            answerCoding: {
-                                code: '2'
-                            }
                         }
                     ],
-                    enableBehavior: 'any',
                     answerOption: [
                         {
                             valueCoding: {
@@ -1747,16 +1739,8 @@ export const NeedsAssessmentNE: Questionnaire = {
                             answerCoding: {
                                 code: '1'
                             }
-                        },
-                        {
-                            question: 'contactWish',
-                            operator: '=',
-                            answerCoding: {
-                                code: '2'
-                            }
                         }
-                    ],
-                    enableBehavior: 'any'
+                    ]
                 }
             ]
         }
