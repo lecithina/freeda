@@ -18,14 +18,33 @@ export default function OpenChoiceQuestion({question, value, onChange}: Question
             ? 'questionnaire.otherPlaceholderOpen'
             : 'questionnaire.otherPlaceholder';
 
+    const hasNoneOption = question.answerOption?.some(o => o.valueCoding?.code === 'none');
+    const isNoneSelected = selectedCodes.has('none');
+
     function toggleOption(code: string) {
         const coding = question.answerOption?.find(o => o.valueCoding?.code === code)?.valueCoding;
         if (!coding) return;
 
-        const newValues = selectedCodes.has(code)
-            ? value.filter(v => v.valueCoding?.code !== code)
-            : [...value, {valueCoding: coding}];
-        onChange(newValues);
+        if (selectedCodes.has(code)) {
+            // Deselect
+            onChange(value.filter(v => v.valueCoding?.code !== code));
+            return;
+        }
+
+        if (code === 'none') {
+            // "nichts davon" selected → clear all others
+            onChange([{valueCoding: coding}]);
+            return;
+        }
+
+        if (isNoneSelected) {
+            // Selecting something else → remove "nichts davon" first
+            const withoutNone = value.filter(v => v.valueCoding?.code !== 'none');
+            onChange([...withoutNone, {valueCoding: coding}]);
+            return;
+        }
+
+        onChange([...value, {valueCoding: coding}]);
     }
 
     function updateOtherText(text: string) {
