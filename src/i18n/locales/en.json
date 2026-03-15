@@ -1,0 +1,60 @@
+{
+  "welcome": {
+    "title": "Hey Freeda",
+    "subtitle": "Needs Assessment Questionnaire",
+    "description": "This questionnaire helps us understand your needs so we can provide better support.",
+    "start": "Start",
+    "resume": "Resume",
+    "startNew": "Start New",
+    "resumePrompt": "You have an incomplete questionnaire. Would you like to continue?"
+  },
+  "questionnaire": {
+    "next": "Next",
+    "back": "Back",
+    "submit": "Submit",
+    "required": "This field is required",
+    "progress": "Step {{current}} of {{total}}",
+    "selectOption": "Select an option",
+    "enterText": "Enter your answer",
+    "enterNumber": "Enter a number",
+    "other": "Other",
+    "edit": "Edit"
+  },
+  "summary": {
+    "title": "Review Your Answers",
+    "submit": "Submit Questionnaire",
+    "edit": "Edit",
+    "noAnswer": "No answer"
+  },
+  "thankYou": {
+    "title": "Thank You!",
+    "message": "Your questionnaire has been submitted successfully. Thank you for taking the time to share your needs with us.",
+    "newQuestionnaire": "Fill Another Questionnaire"
+  },
+  "impressum": {
+    "title": "Impressum",
+    "legal": "Legal Information according to § 5 DDG",
+    "orgName": "Hey Freeda e.V.",
+    "registry": "Registry Court: Amtsgericht Freiburg",
+    "registryNumber": "Registration number: VR 202978",
+    "address": "Hey Freeda e.V.",
+    "represented": "Represented by the board",
+    "contact": "Contact",
+    "donate": "Donate",
+    "iban": "IBAN: DE40 4306 0967 1290 3474 00",
+    "bank": "GLS Gemeinschaftsbank eG"
+  },
+  "languages": {
+    "en": "English",
+    "de": "Deutsch",
+    "ne": "नेपाली"
+  },
+  "footer": {
+    "impressum": "Impressum",
+    "website": "heyfreeda.com"
+  },
+  "loading": "Loading...",
+  "error": {
+    "initFailed": "Initialization Error"
+  }
+}

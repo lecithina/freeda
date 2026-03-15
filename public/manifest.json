@@ -1,0 +1,15 @@
+{
+  "name": "Hey Freeda Questionnaire",
+  "short_name": "Hey Freeda",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#e91e8c",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

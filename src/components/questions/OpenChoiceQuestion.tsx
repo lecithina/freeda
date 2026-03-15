@@ -1,0 +1,84 @@
+import {useTranslation} from 'react-i18next';
+import type {QuestionProps} from './QuestionRenderer.js';
+
+export default function OpenChoiceQuestion({question, value, onChange}: QuestionProps) {
+    const {t} = useTranslation();
+    const selectedCodes = new Set(
+        value.filter(v => v.valueCoding?.code).map(v => v.valueCoding!.code!)
+    );
+    const otherText = value.find(v => v.valueString)?.valueString ?? '';
+
+    function toggleOption(code: string) {
+        const coding = question.answerOption?.find(o => o.valueCoding?.code === code)?.valueCoding;
+        if (!coding) return;
+
+        const newValues = selectedCodes.has(code)
+            ? value.filter(v => v.valueCoding?.code !== code)
+            : [...value, {valueCoding: coding}];
+        onChange(newValues);
+    }
+
+    function updateOtherText(text: string) {
+        const withoutOther = value.filter(v => !v.valueString);
+        if (text) {
+            onChange([...withoutOther, {valueString: text}]);
+        } else {
+            onChange(withoutOther);
+        }
+    }
+
+    return (
+        <div className="space-y-2">
+            {question.answerOption?.map(option => {
+                const coding = option.valueCoding;
+                if (!coding?.code) return null;
+                const isSelected = selectedCodes.has(coding.code);
+
+                return (
+                    <button
+                        key={coding.code}
+                        type="button"
+                        onClick={() => toggleOption(coding.code!)}
+                        className={`flex min-h-[44px] w-full items-center rounded-lg border px-4 py-3 text-left transition-colors ${
+                            isSelected
+                                ? 'border-freeda-pink bg-freeda-pink/20 text-white'
+                                : 'border-freeda-gray-light bg-freeda-gray text-gray-300 hover:border-gray-500'
+                        }`}
+                    >
+                        <span
+                            className={`mr-3 flex h-4 w-4 shrink-0 items-center justify-center rounded border-2 ${
+                                isSelected
+                                    ? 'border-freeda-pink bg-freeda-pink'
+                                    : 'border-gray-500'
+                            }`}
+                        >
+                            {isSelected && (
+                                <svg
+                                    className="h-3 w-3 text-white"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={3}
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M5 13l4 4L19 7"
+                                    />
+                                </svg>
+                            )}
+                        </span>
+                        {coding.display}
+                    </button>
+                );
+            })}
+            <input
+                type="text"
+                placeholder={t('questionnaire.other')}
+                value={otherText}
+                onChange={e => updateOtherText(e.target.value)}
+                className="min-h-[44px] w-full rounded-lg border border-freeda-gray-light bg-freeda-gray px-4 py-3 text-white placeholder-gray-500 transition-colors focus:border-freeda-pink focus:outline-none"
+            />
+        </div>
+    );
+}

@@ -1,0 +1,60 @@
+{
+  "welcome": {
+    "title": "हे फ्रीडा",
+    "subtitle": "आवश्यकता मूल्याङ्कन प्रश्नावली",
+    "description": "यो प्रश्नावलीले हामीलाई तपाईंको आवश्यकता बुझ्न मद्दत गर्छ ताकि हामी राम्रो सहयोग प्रदान गर्न सकौं।",
+    "start": "सुरु गर्नुहोस्",
+    "resume": "जारी राख्नुहोस्",
+    "startNew": "नयाँ सुरु गर्नुहोस्",
+    "resumePrompt": "तपाईंको एउटा अपूर्ण प्रश्नावली छ। के तपाईं जारी राख्न चाहनुहुन्छ?"
+  },
+  "questionnaire": {
+    "next": "अर्को",
+    "back": "पछाडि",
+    "submit": "पेश गर्नुहोस्",
+    "required": "यो फिल्ड आवश्यक छ",
+    "progress": "चरण {{current}} / {{total}}",
+    "selectOption": "एउटा विकल्प छान्नुहोस्",
+    "enterText": "आफ्नो जवाफ लेख्नुहोस्",
+    "enterNumber": "एउटा संख्या लेख्नुहोस्",
+    "other": "अन्य",
+    "edit": "सम्पादन"
+  },
+  "summary": {
+    "title": "आफ्ना जवाफहरू समीक्षा गर्नुहोस्",
+    "submit": "प्रश्नावली पेश गर्नुहोस्",
+    "edit": "सम्पादन",
+    "noAnswer": "कुनै जवाफ छैन"
+  },
+  "thankYou": {
+    "title": "धन्यवाद!",
+    "message": "तपाईंको प्रश्नावली सफलतापूर्वक पेश गरिएको छ। आफ्ना आवश्यकताहरू हामीसँग साझा गर्न समय दिनुभएकोमा धन्यवाद।",
+    "newQuestionnaire": "अर्को प्रश्नावली भर्नुहोस्"
+  },
+  "impressum": {
+    "title": "कानूनी जानकारी",
+    "legal": "§ 5 DDG अनुसार कानूनी जानकारी",
+    "orgName": "Hey Freeda e.V.",
+    "registry": "दर्ता अदालत: Amtsgericht Freiburg",
+    "registryNumber": "दर्ता नम्बर: VR 202978",
+    "address": "Hey Freeda e.V.",
+    "represented": "बोर्ड द्वारा प्रतिनिधित्व",
+    "contact": "सम्पर्क",
+    "donate": "दान गर्नुहोस्",
+    "iban": "IBAN: DE40 4306 0967 1290 3474 00",
+    "bank": "GLS Gemeinschaftsbank eG"
+  },
+  "languages": {
+    "en": "English",
+    "de": "Deutsch",
+    "ne": "नेपाली"
+  },
+  "footer": {
+    "impressum": "कानूनी जानकारी",
+    "website": "heyfreeda.com"
+  },
+  "loading": "लोड हुँदैछ...",
+  "error": {
+    "initFailed": "प्रारम्भिक त्रुटि"
+  }
+}

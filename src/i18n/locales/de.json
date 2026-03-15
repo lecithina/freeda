@@ -1,0 +1,60 @@
+{
+  "welcome": {
+    "title": "Hey Freeda",
+    "subtitle": "Bedarfserhebung",
+    "description": "Dieser Fragebogen hilft uns, deine Bedürfnisse zu verstehen, damit wir dich besser unterstützen können.",
+    "start": "Starten",
+    "resume": "Fortsetzen",
+    "startNew": "Neu starten",
+    "resumePrompt": "Du hast einen unvollständigen Fragebogen. Möchtest du fortfahren?"
+  },
+  "questionnaire": {
+    "next": "Weiter",
+    "back": "Zurück",
+    "submit": "Absenden",
+    "required": "Dieses Feld ist erforderlich",
+    "progress": "Schritt {{current}} von {{total}}",
+    "selectOption": "Eine Option auswählen",
+    "enterText": "Gib deine Antwort ein",
+    "enterNumber": "Gib eine Zahl ein",
+    "other": "Sonstiges",
+    "edit": "Bearbeiten"
+  },
+  "summary": {
+    "title": "Überprüfe deine Antworten",
+    "submit": "Fragebogen absenden",
+    "edit": "Bearbeiten",
+    "noAnswer": "Keine Antwort"
+  },
+  "thankYou": {
+    "title": "Vielen Dank!",
+    "message": "Dein Fragebogen wurde erfolgreich eingereicht. Vielen Dank, dass du dir die Zeit genommen hast, deine Bedürfnisse mit uns zu teilen.",
+    "newQuestionnaire": "Weiteren Fragebogen ausfüllen"
+  },
+  "impressum": {
+    "title": "Impressum",
+    "legal": "Angaben gemäß § 5 DDG",
+    "orgName": "Hey Freeda e.V.",
+    "registry": "Registergericht: Amtsgericht Freiburg",
+    "registryNumber": "Registernummer: VR 202978",
+    "address": "Hey Freeda e.V.",
+    "represented": "Vertreten durch den Vorstand",
+    "contact": "Kontakt",
+    "donate": "Spenden",
+    "iban": "IBAN: DE40 4306 0967 1290 3474 00",
+    "bank": "GLS Gemeinschaftsbank eG"
+  },
+  "languages": {
+    "en": "English",
+    "de": "Deutsch",
+    "ne": "नेपाली"
+  },
+  "footer": {
+    "impressum": "Impressum",
+    "website": "heyfreeda.com"
+  },
+  "loading": "Laden...",
+  "error": {
+    "initFailed": "Initialisierungsfehler"
+  }
+}
