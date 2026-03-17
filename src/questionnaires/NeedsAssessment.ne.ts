@@ -534,7 +534,6 @@ export const NeedsAssessmentNE: Questionnaire = {
                     ]
                 },
                 {
-                {
                     linkId: 'contactMethod',
                     text: 'तपाईंलाई कसरी सम्पर्क गर्न मन पर्छ?',
                     type: 'choice',
