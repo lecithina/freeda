@@ -19,7 +19,7 @@ export const NeedsAssessmentDE: Questionnaire = {
             item: [
                 {
                     linkId: 'disclaimerText',
-                    text: 'Dieser Fragebogen hilft uns, deine Situation besser zu verstehen und zu schauen, welche Unterst\u00fctzung im Moment zu dir passen k\u00f6nnte.\nDu entscheidest selbst, welche Fragen du beantworten m\u00f6chtest.\nAlles ist freiwillig und wird vertraulich behandelt.\nKontaktdaten musst du nur angeben, wenn du das m\u00f6chtest; wir fragen sie erst am Ende.\nFragen, die du im Moment nicht beantworten m\u00f6chtest, kannst du einfach \u00fcberspringen. \uD83C\uDF38',
+                    text: 'Dieser Fragebogen hilft uns, deine Situation besser zu verstehen und zu schauen, welche Unterst\u00fctzung im Moment zu dir passen k\u00f6nnte. Du entscheidest selbst, welche Fragen du beantworten m\u00f6chtest. Alles ist freiwillig und wird vertraulich behandelt. Kontaktdaten musst du nur angeben, wenn du das m\u00f6chtest; wir fragen sie erst am Ende. Fragen, die du im Moment nicht beantworten m\u00f6chtest, kannst du einfach \u00fcberspringen. \uD83C\uDF38',
                     type: 'display',
                     disabledDisplay: 'protected'
                 }
