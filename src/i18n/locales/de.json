@@ -11,7 +11,7 @@
   "questionnaire": {
     "next": "Weiter",
     "back": "Zurück",
-    "review": "Angaben \u00fcberpr\u00fcfen",
+    "review": "Angaben überprüfen",
     "submit": "Absenden",
     "required": "Dieses Feld ist erforderlich",
     "otherTextRequired": "Bitte beschreibe deine Antwort bei Sonstiges.",
@@ -36,7 +36,7 @@
   },
   "thankYou": {
     "title": "Vielen Dank!",
-    "message": "Danke, dass du dir Zeit genommen hast und deine Situation mit uns geteilt hast.\n\nDeine Antworten helfen uns, besser zu verstehen, was du gerade brauchst und welche Unterst\u00fctzung f\u00fcr dich sinnvoll und passend sein k\u00f6nnte. Wir gehen mit deinen Angaben sorgf\u00e4ltig, vertraulich und respektvoll um.\n\nWenn du angegeben hast, dass Hey Freeda dich kontaktieren darf, melden wir uns \u00fcber den von dir genannten Weg. Wenn du im Moment keinen direkten Kontakt m\u00f6chtest, helfen uns deine Angaben trotzdem dabei, Bedarfe besser zu verstehen und passende Angebote f\u00fcr M\u00e4dchen und Frauen weiterzuentwickeln.",
+    "message": "Danke, dass du dir Zeit genommen hast und deine Situation mit uns geteilt hast.\n\nDeine Antworten helfen uns, besser zu verstehen, was du gerade brauchst und welche Unterstützung für dich sinnvoll und passend sein könnte. Wir gehen mit deinen Angaben sorgfältig, vertraulich und respektvoll um.\n\nWenn du angegeben hast, dass Hey Freeda dich kontaktieren darf, melden wir uns über den von dir genannten Weg. Wenn du im Moment keinen direkten Kontakt möchtest, helfen uns deine Angaben trotzdem dabei, Bedarfe besser zu verstehen und passende Angebote für Mädchen und Frauen weiterzuentwickeln.",
     "learnMore": "Mehr über Hey Freeda erfahren",
     "newQuestionnaire": "Weiteren Fragebogen ausfüllen"
   },
@@ -48,10 +48,7 @@
     "registryNumber": "Registernummer: VR 202978",
     "address": "Hey Freeda e.V.",
     "represented": "Vertreten durch den Vorstand",
-    "contact": "Kontakt",
-    "donate": "Spenden",
-    "iban": "IBAN: DE89 7605 0101 0015 1713 66",
-    "bank": "GLS Gemeinschaftsbank eG"
+    "contact": "Kontakt"
   },
   "languages": {
     "en": "English",

@@ -14,9 +14,14 @@ export default function Footer() {
                 >
                     {t('footer.website')}
                 </a>
-                <p className="text-center text-xs text-gray-500">
-                    Hey Freeda e.V. &middot; IBAN: DE40 4306 0967 1290 3474 00
-                </p>
+                <a
+                    href="https://www.heyfreeda.com/impressum"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-500 transition-colors hover:text-freeda-pink"
+                >
+                    {t('footer.impressum')}
+                </a>
             </div>
         </footer>
     );
