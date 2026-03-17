@@ -267,12 +267,12 @@ export function useQuestionnaireFlow(
     }, []);
 
     const submit = useCallback(async () => {
-        // Send results via WhatsApp first (before async calls to avoid popup blocking)
-        sendResultsEmail(groups, answers, questionnaire.language ?? 'en');
-
         const response = buildResponse(questionnaire, answers, 'completed');
         await questionnaireModel.postResponse(response, 'NeedsAssessment', incompleteType);
         await questionnaireModel.markIncompleteResponseAsComplete(incompleteType);
+
+        // Send results via EmailJS in the background (fire and forget)
+        sendResultsEmail(groups, answers, questionnaire.language ?? 'en');
 
         setPhase('thankyou');
     }, [questionnaire, answers, questionnaireModel, incompleteType, groups]);

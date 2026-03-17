@@ -1,6 +1,10 @@
 import type {Question, QuestionnaireValue} from '@refinio/one.models/lib/models/QuestionnaireModel.js';
+import emailjs from '@emailjs/browser';
 
-const WHATSAPP_NUMBER = '4915141472058';
+// EmailJS configuration
+const EMAILJS_SERVICE_ID = 'service_heyfreeda';
+const EMAILJS_TEMPLATE_ID = 'template_heyfreeda';
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
 
 function formatValue(answer: QuestionnaireValue[]): string {
     if (answer.length === 0) return '\u2014';
@@ -20,7 +24,7 @@ function formatValue(answer: QuestionnaireValue[]): string {
 }
 
 /**
- * Build a compact plain-text representation of all answers for WhatsApp.
+ * Build a plain-text representation of all answers.
  */
 export function buildStructuredOutput(
     groups: Question[],
@@ -29,14 +33,14 @@ export function buildStructuredOutput(
 ): string {
     const timestamp = new Date().toISOString();
     const lines: string[] = [
-        '*HEY FREEDA \u2014 NEEDS ASSESSMENT*',
+        'HEY FREEDA \u2014 NEEDS ASSESSMENT',
         `Date: ${timestamp}`,
         `Language: ${language}`,
         ''
     ];
 
     for (const group of groups) {
-        lines.push(`*${(group.text ?? group.linkId).toUpperCase()}*`);
+        lines.push(`${(group.text ?? group.linkId).toUpperCase()}`);
 
         if (group.item) {
             for (const question of group.item) {
@@ -55,8 +59,8 @@ export function buildStructuredOutput(
 }
 
 /**
- * Send questionnaire results via WhatsApp (wa.me link).
- * Opens WhatsApp with pre-filled message to the Hey Freeda number.
+ * Send questionnaire results via EmailJS (background, reliable).
+ * Falls back silently — the user always sees the thank-you page.
  */
 export function sendResultsEmail(
     groups: Question[],
@@ -65,7 +69,16 @@ export function sendResultsEmail(
 ): void {
     const body = buildStructuredOutput(groups, answers, language);
 
-    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(body)}`;
-
-    window.location.href = waUrl;
+    emailjs
+        .send(
+            EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_ID,
+            {
+                to_email: 'mail@heyfreeda.com',
+                subject: `Hey Freeda \u2014 Needs Assessment [${new Date().toLocaleDateString()}]`,
+                message: body
+            },
+            EMAILJS_PUBLIC_KEY
+        )
+        .catch(err => console.error('EmailJS failed:', err));
 }
