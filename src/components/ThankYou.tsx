@@ -9,21 +9,11 @@ export default function ThankYou({onNewQuestionnaire}: Props) {
 
     return (
         <div className="flex flex-col items-center gap-8 py-12 text-center">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-green-500/20">
-                <svg
-                    className="h-10 w-10 text-green-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M5 13l4 4L19 7"
-                    />
-                </svg>
-            </div>
+            <img
+                src="/freeda-logo.png"
+                alt="Hey Freeda"
+                className="h-32 w-32 object-contain"
+            />
 
             <h2 className="text-3xl font-bold uppercase tracking-wide">
                 {t('thankYou.title')}
