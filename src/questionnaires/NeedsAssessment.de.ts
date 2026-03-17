@@ -238,6 +238,54 @@ export const NeedsAssessmentDE: Questionnaire = {
                     ]
                 },
                 {
+                    linkId: 'orgSupport',
+                    text: 'Wirst du aktuell von einer Organisation unterst\u00fctzt?',
+                    type: 'choice',
+                    disabledDisplay: 'protected',
+                    answerOption: [
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/org-support',
+                                version: '1.0',
+                                code: 'yes',
+                                display: 'ja'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/org-support',
+                                version: '1.0',
+                                code: 'no',
+                                display: 'nein'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/org-support',
+                                version: '1.0',
+                                code: 'unsure',
+                                display: 'ich bin mir nicht sicher'
+                            }
+                        }
+                    ]
+                },
+                {
+                    linkId: 'orgName',
+                    text: 'Von welcher Organisation?',
+                    type: 'string',
+                    disabledDisplay: 'protected',
+                    enableWhen: [
+                        {
+                            question: 'orgSupport',
+                            operator: '=',
+                            answerCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/org-support',
+                                code: 'yes'
+                            }
+                        }
+                    ]
+                },
+                {
                     linkId: 'futureOutlook',
                     text: 'Wie f\u00fchlst du dich gerade in Bezug auf deine Zukunft?',
                     type: 'choice',

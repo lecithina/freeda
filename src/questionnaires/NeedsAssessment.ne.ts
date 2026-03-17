@@ -232,6 +232,54 @@ export const NeedsAssessmentNE: Questionnaire = {
                     ]
                 },
                 {
+                    linkId: 'orgSupport',
+                    text: '\u0915\u0947 \u0924\u092a\u093e\u0908\u0902\u0932\u093e\u0908 \u0905\u0939\u093f\u0932\u0947 \u0915\u0941\u0928\u0948 \u0938\u0902\u0938\u094d\u0925\u093e\u0932\u0947 \u0938\u0939\u092f\u094b\u0917 \u0917\u0930\u093f\u0930\u0939\u0947\u0915\u094b \u091b?',
+                    type: 'choice',
+                    disabledDisplay: 'protected',
+                    answerOption: [
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/org-support',
+                                version: '1.0',
+                                code: 'yes',
+                                display: '\u0939\u094b'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/org-support',
+                                version: '1.0',
+                                code: 'no',
+                                display: '\u091b\u0948\u0928'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/org-support',
+                                version: '1.0',
+                                code: 'unsure',
+                                display: '\u0925\u093e\u0939\u093e \u091b\u0948\u0928'
+                            }
+                        }
+                    ]
+                },
+                {
+                    linkId: 'orgName',
+                    text: '\u0915\u0941\u0928 \u0938\u0902\u0938\u094d\u0925\u093e?',
+                    type: 'string',
+                    disabledDisplay: 'protected',
+                    enableWhen: [
+                        {
+                            question: 'orgSupport',
+                            operator: '=',
+                            answerCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/org-support',
+                                code: 'yes'
+                            }
+                        }
+                    ]
+                },
+                {
                     linkId: 'futureOutlook',
                     prefix: '1_4',
                     text: 'आफ्नो भविष्यको बारेमा तपाईंलाई कस्तो लाग्छ?',
