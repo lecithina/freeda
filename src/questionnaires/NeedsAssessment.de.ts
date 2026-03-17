@@ -349,7 +349,7 @@ export const NeedsAssessmentDE: Questionnaire = {
                                 system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/missing-items',
                                 version: '1.0',
                                 code: '1',
-                                display: 'Hygieneprodukte oder Medikamente'
+                                display: 'sichere Unterkunft'
                             }
                         },
                         {
@@ -357,14 +357,6 @@ export const NeedsAssessmentDE: Questionnaire = {
                                 system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/missing-items',
                                 version: '1.0',
                                 code: '2',
-                                display: 'Kleidung oder Schuhe'
-                            }
-                        },
-                        {
-                            valueCoding: {
-                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/missing-items',
-                                version: '1.0',
-                                code: '3',
                                 display: 'Essen'
                             }
                         },
@@ -372,8 +364,16 @@ export const NeedsAssessmentDE: Questionnaire = {
                             valueCoding: {
                                 system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/missing-items',
                                 version: '1.0',
+                                code: '3',
+                                display: 'Trinkwasser'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/missing-items',
+                                version: '1.0',
                                 code: '4',
-                                display: 'Zugang zu sauberem Trinkwasser'
+                                display: 'Geld f\u00fcr Arztbesuche oder Medikamente'
                             }
                         },
                         {
@@ -381,7 +381,7 @@ export const NeedsAssessmentDE: Questionnaire = {
                                 system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/missing-items',
                                 version: '1.0',
                                 code: '5',
-                                display: 'Geld f\u00fcr Arztbesuche oder Untersuchungen'
+                                display: 'Kleidung oder Schuhe'
                             }
                         },
                         {
@@ -389,7 +389,7 @@ export const NeedsAssessmentDE: Questionnaire = {
                                 system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/missing-items',
                                 version: '1.0',
                                 code: '6',
-                                display: 'sichere Unterkunft'
+                                display: 'Hygieneprodukte'
                             }
                         },
                         {
