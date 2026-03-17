@@ -217,6 +217,11 @@ export const NeedsAssessmentEN: Questionnaire = {
                     text: 'Are you worried that you might not be able to continue your education or training?',
                     type: 'choice',
                     disabledDisplay: 'protected',
+                    enableWhen: [
+                        {question: 'currentlyStudying', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/currently-studying', code: 'yes'}},
+                        {question: 'currentlyStudying', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/currently-studying', code: 'want-to'}}
+                    ],
+                    enableBehavior: 'any',
                     answerOption: [
                         {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/education-concern', version: '1.0', code: 'yes', display: 'yes'}},
                         {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/education-concern', version: '1.0', code: 'maybe', display: 'maybe'}},
@@ -262,13 +267,13 @@ export const NeedsAssessmentEN: Questionnaire = {
             item: [
                 {
                     linkId: 'generalDirection',
-                    text: 'Which direction interests you the most right now?',
+                    text: 'Where would you rather look for opportunities right now?',
                     type: 'choice',
                     disabledDisplay: 'protected',
                     answerOption: [
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/general-direction', version: '1.0', code: 'germany', display: 'I am more interested in opportunities in Germany'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/general-direction', version: '1.0', code: 'nepal', display: 'I am more interested in opportunities in Nepal'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/general-direction', version: '1.0', code: 'both', display: 'both could be interesting for me'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/general-direction', version: '1.0', code: 'germany', display: 'rather in Germany'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/general-direction', version: '1.0', code: 'nepal', display: 'rather in Nepal'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/general-direction', version: '1.0', code: 'both', display: 'in both directions'}},
                         {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/general-direction', version: '1.0', code: 'unsure', display: 'I do not know yet'}}
                     ]
                 }
@@ -378,6 +383,13 @@ export const NeedsAssessmentEN: Questionnaire = {
                     text: 'Do you have a smartphone or another device you could use regularly for learning?',
                     type: 'choice',
                     disabledDisplay: 'protected',
+                    enableWhen: [
+                        {question: 'wantsLanguage', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/wants-language', code: 'yes'}},
+                        {question: 'wantsLanguage', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/wants-language', code: 'maybe'}},
+                        {question: 'currentlyStudying', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/currently-studying', code: 'yes'}},
+                        {question: 'currentlyStudying', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/currently-studying', code: 'want-to'}}
+                    ],
+                    enableBehavior: 'any',
                     answerOption: [
                         {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/has-smartphone', version: '1.0', code: '1', display: 'yes'}},
                         {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/has-smartphone', version: '1.0', code: '2', display: 'partially'}},

@@ -217,6 +217,11 @@ export const NeedsAssessmentNE: Questionnaire = {
                     text: '\u0924\u092a\u093e\u0908\u0902\u0932\u093e\u0908 \u0936\u093f\u0915\u094d\u0937\u093e \u0935\u093e \u0924\u093e\u0932\u093f\u092e \u091c\u093e\u0930\u0940 \u0930\u093e\u0916\u094d\u0928 \u0928\u0938\u0915\u094d\u0928\u0947 \u091a\u093f\u0928\u094d\u0924\u093e \u091b?',
                     type: 'choice',
                     disabledDisplay: 'protected',
+                    enableWhen: [
+                        {question: 'currentlyStudying', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/currently-studying', code: 'yes'}},
+                        {question: 'currentlyStudying', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/currently-studying', code: 'want-to'}}
+                    ],
+                    enableBehavior: 'any',
                     answerOption: [
                         {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/education-concern', version: '1.0', code: 'yes', display: '\u0939\u094b'}},
                         {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/education-concern', version: '1.0', code: 'maybe', display: '\u0939\u094b\u0932\u093e'}},
@@ -262,7 +267,7 @@ export const NeedsAssessmentNE: Questionnaire = {
             item: [
                 {
                     linkId: 'generalDirection',
-                    text: '\u0905\u0939\u093f\u0932\u0947 \u0924\u092a\u093e\u0908\u0902\u0915\u094b \u0932\u093e\u0917\u093f \u0915\u0941\u0928 \u0926\u093f\u0936\u093e \u0938\u092c\u0948\u092d\u0928\u094d\u0926\u093e \u0930\u094b\u091a\u0915 \u091b?',
+                    text: 'अहिले तपाईं अवसरहरू कुन दिशामा खोज्न चाहनुहुन्छ?',
                     type: 'choice',
                     disabledDisplay: 'protected',
                     answerOption: [
@@ -378,6 +383,13 @@ export const NeedsAssessmentNE: Questionnaire = {
                     text: '\u0924\u092a\u093e\u0908\u0902\u0938\u0901\u0917 \u0938\u094d\u092e\u093e\u0930\u094d\u091f\u092b\u094b\u0928 \u0935\u093e \u0928\u093f\u092f\u092e\u093f\u0924 \u0930\u0942\u092a\u092e\u093e \u0938\u093f\u0915\u094d\u0928 \u0938\u0915\u094d\u0928\u0947 \u0905\u0930\u094d\u0915\u094b \u0909\u092a\u0915\u0930\u0923 \u091b?',
                     type: 'choice',
                     disabledDisplay: 'protected',
+                    enableWhen: [
+                        {question: 'wantsLanguage', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/wants-language', code: 'yes'}},
+                        {question: 'wantsLanguage', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/wants-language', code: 'maybe'}},
+                        {question: 'currentlyStudying', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/currently-studying', code: 'yes'}},
+                        {question: 'currentlyStudying', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/currently-studying', code: 'want-to'}}
+                    ],
+                    enableBehavior: 'any',
                     answerOption: [
                         {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/has-smartphone', version: '1.0', code: '1', display: '\u091b'}},
                         {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/has-smartphone', version: '1.0', code: '2', display: '\u0906\u0902\u0936\u093f\u0915 \u0930\u0942\u092a\u092e\u093e'}},
