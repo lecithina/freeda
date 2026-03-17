@@ -920,6 +920,52 @@ export const NeedsAssessmentEN: Questionnaire = {
             disabledDisplay: 'protected',
             item: [
                 {
+                    linkId: 'languageInterest',
+                    text: 'Are you interested in learning a new language?',
+                    type: 'open-choice',
+                    disabledDisplay: 'protected',
+                    answerOption: [
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/language-interest',
+                                version: '1.0',
+                                code: 'german',
+                                display: 'yes, German'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/language-interest',
+                                version: '1.0',
+                                code: 'english',
+                                display: 'yes, English'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/language-interest',
+                                version: '1.0',
+                                code: 'other',
+                                display: 'yes, another language'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/language-interest',
+                                version: '1.0',
+                                code: 'no',
+                                display: 'no, not right now'
+                            }
+                        }
+                    ]
+                },
+                {
+                    linkId: 'germanHint',
+                    text: 'Note: Hey Freeda can support you with learning German.',
+                    type: 'display',
+                    disabledDisplay: 'protected'
+                },
+                {
                     linkId: 'germanLevel',
                     text: 'What is your current German level?',
                     type: 'choice',

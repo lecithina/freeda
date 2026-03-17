@@ -952,6 +952,52 @@ export const NeedsAssessmentNE: Questionnaire = {
             disabledDisplay: 'protected',
             item: [
                 {
+                    linkId: 'languageInterest',
+                    text: '\u0915\u0947 \u0924\u092a\u093e\u0908\u0902\u0932\u093e\u0908 \u0928\u092f\u093e\u0901 \u092d\u093e\u0937\u093e \u0938\u093f\u0915\u094d\u0928\u092e\u093e \u0930\u0941\u091a\u093f \u091b?',
+                    type: 'open-choice',
+                    disabledDisplay: 'protected',
+                    answerOption: [
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/language-interest',
+                                version: '1.0',
+                                code: 'german',
+                                display: '\u0939\u094b, \u091c\u0930\u094d\u092e\u0928'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/language-interest',
+                                version: '1.0',
+                                code: 'english',
+                                display: '\u0939\u094b, \u0905\u0919\u094d\u0917\u094d\u0930\u0947\u091c\u0940'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/language-interest',
+                                version: '1.0',
+                                code: 'other',
+                                display: '\u0939\u094b, \u0905\u0930\u094d\u0915\u094b \u092d\u093e\u0937\u093e'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/language-interest',
+                                version: '1.0',
+                                code: 'no',
+                                display: '\u0905\u0939\u093f\u0932\u0947 \u0939\u094b\u0907\u0928'
+                            }
+                        }
+                    ]
+                },
+                {
+                    linkId: 'germanHint',
+                    text: '\u0928\u094b\u091f: Hey Freeda \u0932\u0947 \u0924\u092a\u093e\u0908\u0902\u0932\u093e\u0908 \u091c\u0930\u094d\u092e\u0928 \u0938\u093f\u0915\u094d\u0928\u092e\u093e \u0938\u0939\u092f\u094b\u0917 \u0917\u0930\u094d\u0928 \u0938\u0915\u094d\u091b\u0964',
+                    type: 'display',
+                    disabledDisplay: 'protected'
+                },
+                {
                     linkId: 'germanLevel',
                     prefix: '5_1',
                     text: 'तपाईंको हालको जर्मन स्तर के हो?',
