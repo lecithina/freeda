@@ -33,6 +33,17 @@ export default function Summary({groups, answers, onEdit, onSubmit, onBack}: Pro
         <div className="space-y-6">
             <h2 className="text-2xl font-bold uppercase tracking-wide">{t('summary.title')}</h2>
 
+            <div className="rounded-lg border border-freeda-pink bg-freeda-pink/10 p-4 text-center">
+                <p className="text-gray-300">{t('summary.notYetSent')}</p>
+                <button
+                    type="button"
+                    onClick={onSubmit}
+                    className="mt-3 min-h-[44px] rounded-lg bg-freeda-pink px-8 py-3 font-bold text-white transition-colors hover:bg-freeda-pink-dark focus:outline-none focus:ring-2 focus:ring-freeda-pink focus:ring-offset-2 focus:ring-offset-freeda-black"
+                >
+                    {t('summary.submit')}
+                </button>
+            </div>
+
             {groups.map((group, groupIdx) => (
                 <div
                     key={group.linkId}

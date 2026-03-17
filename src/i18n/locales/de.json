@@ -28,6 +28,7 @@
   },
   "summary": {
     "title": "Überprüfe deine Antworten",
+    "notYetSent": "Dein Fragebogen wurde noch nicht abgeschickt. Du kannst deine Antworten hier noch einmal durchsehen und dann absenden.",
     "submit": "Fragebogen absenden",
     "edit": "Bearbeiten",
     "noAnswer": "Keine Antwort"

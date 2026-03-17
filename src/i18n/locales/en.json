@@ -28,6 +28,7 @@
   },
   "summary": {
     "title": "Review Your Answers",
+    "notYetSent": "Your questionnaire has not been sent yet. You can review your answers here and then submit.",
     "submit": "Submit Questionnaire",
     "edit": "Edit",
     "noAnswer": "No answer"
