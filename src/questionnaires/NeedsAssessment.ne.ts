@@ -1571,6 +1571,38 @@ export const NeedsAssessmentNE: Questionnaire = {
                     ]
                 },
                 {
+                    linkId: 'personalBurden',
+                    text: '\u0915\u0947\u0939\u0940 \u0915\u0941\u0930\u093e \u091b \u091c\u0938\u0932\u0947 \u0924\u092a\u093e\u0908\u0902\u0932\u093e\u0908 \u0905\u0939\u093f\u0932\u0947 \u0927\u0947\u0930\u0948 \u0924\u0928\u093e\u0935\u092e\u093e \u0930\u093e\u0916\u094d\u0928\u0947 \u0917\u0930\u0947\u0915\u094b \u091b\u002c \u091c\u0938\u092c\u093e\u0930\u0947 \u0924\u092a\u093e\u0908\u0902 \u0915\u0938\u0948\u0938\u0901\u0917 \u0915\u0941\u0930\u093e \u0917\u0930\u094d\u0928 \u091a\u093e\u0939\u0928\u0941\u0939\u0941\u0928\u094d\u091b?',
+                    type: 'choice',
+                    disabledDisplay: 'protected',
+                    answerOption: [
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/personal-burden',
+                                version: '1.0',
+                                code: 'yes',
+                                display: '\u0939\u094b'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/personal-burden',
+                                version: '1.0',
+                                code: 'maybe',
+                                display: '\u0938\u093e\u092f\u0926 \u092a\u091b\u093f'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/personal-burden',
+                                version: '1.0',
+                                code: 'no',
+                                display: '\u091b\u0948\u0928'
+                            }
+                        }
+                    ]
+                },
+                {
                     linkId: 'helpfulSupport',
                     prefix: '7_2',
                     text: 'अहिले कुन सहयोग सबैभन्दा उपयोगी हुन्छ?',

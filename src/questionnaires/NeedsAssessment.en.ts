@@ -1524,6 +1524,38 @@ export const NeedsAssessmentEN: Questionnaire = {
                     ]
                 },
                 {
+                    linkId: 'personalBurden',
+                    text: 'Is there something that is really weighing on you right now that you would like to talk to someone about?',
+                    type: 'choice',
+                    disabledDisplay: 'protected',
+                    answerOption: [
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/personal-burden',
+                                version: '1.0',
+                                code: 'yes',
+                                display: 'yes'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/personal-burden',
+                                version: '1.0',
+                                code: 'maybe',
+                                display: 'maybe later'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/personal-burden',
+                                version: '1.0',
+                                code: 'no',
+                                display: 'no'
+                            }
+                        }
+                    ]
+                },
+                {
                     linkId: 'helpfulSupport',
                     text: 'What support would be most helpful for you right now?',
                     type: 'open-choice',

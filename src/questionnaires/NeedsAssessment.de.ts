@@ -1042,6 +1042,38 @@ export const NeedsAssessmentDE: Questionnaire = {
             disabledDisplay: 'protected',
             item: [
                 {
+                    linkId: 'personalBurden',
+                    text: 'Gibt es etwas, das dich gerade stark belastet, wor\u00fcber du gerne mit jemandem sprechen w\u00fcrdest?',
+                    type: 'choice',
+                    disabledDisplay: 'protected',
+                    answerOption: [
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/personal-burden',
+                                version: '1.0',
+                                code: 'yes',
+                                display: 'ja'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/personal-burden',
+                                version: '1.0',
+                                code: 'maybe',
+                                display: 'vielleicht sp\u00e4ter'
+                            }
+                        },
+                        {
+                            valueCoding: {
+                                system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/personal-burden',
+                                version: '1.0',
+                                code: 'no',
+                                display: 'nein'
+                            }
+                        }
+                    ]
+                },
+                {
                     // Mehrfachauswahl, max. 3 Antworten (Limit nicht im Framework unterst\u00fctzt)
                     linkId: 'helpfulSupport',
                     text: 'Welche Unterst\u00fctzung w\u00e4re f\u00fcr dich im Moment am hilfreichsten?',
