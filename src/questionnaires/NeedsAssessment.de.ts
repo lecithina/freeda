@@ -366,11 +366,11 @@ export const NeedsAssessmentDE: Questionnaire = {
                     ],
                     enableBehavior: 'any',
                     answerOption: [
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/english-level', version: '1.0', code: '1', display: 'keine Kenntnisse'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/english-level', version: '1.0', code: '2', display: 'erste W\u00f6rter und S\u00e4tze'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/english-level', version: '1.0', code: '3', display: 'einfache Gespr\u00e4che sind m\u00f6glich'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/english-level', version: '1.0', code: '4', display: 'ich kann schon recht gut verstehen und sprechen'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/english-level', version: '1.0', code: '5', display: 'ich wei\u00df es nicht'}}
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/english-level', version: '1.0', code: '1', display: 'Ich verstehe und spreche nur wenig Englisch'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/english-level', version: '1.0', code: '2', display: 'Ich kann einfache Gespr\u00e4che auf Englisch f\u00fchren'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/english-level', version: '1.0', code: '3', display: 'Ich kann mich im Alltag auf Englisch meistens gut verst\u00e4ndigen'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/english-level', version: '1.0', code: '4', display: 'Ich kann auf Englisch auch \u00fcber Schule, Arbeit oder Pl\u00e4ne sprechen'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/english-level', version: '1.0', code: '5', display: 'Ich bin mir nicht sicher'}}
                     ]
                 },
                 {
