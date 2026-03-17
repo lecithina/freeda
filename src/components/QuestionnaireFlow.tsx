@@ -53,16 +53,16 @@ export default function QuestionnaireFlow({state, setAnswer, goNext, goBack}: Pr
     return (
         <div className="space-y-6">
             <div ref={topRef} />
-            {/* Progress bar */}
-            <div className="space-y-2">
+            {/* Progress bar — sticky */}
+            <div className="sticky top-0 z-10 -mx-4 bg-freeda-black px-4 pb-3 pt-2">
                 <div className="flex justify-between text-sm text-gray-400">
                     <span>{t('questionnaire.section', {current: currentStep + 1, total: totalSteps})}</span>
                     <span>{Math.round(progressPercent)}%</span>
                 </div>
-                <div className="h-2 overflow-hidden rounded-full bg-freeda-gray-light">
+                <div className="mt-1 h-2 overflow-hidden rounded-full bg-freeda-gray-light">
                     <div
-                        className="h-full rounded-full bg-freeda-pink transition-all duration-300"
-                        style={{width: `${progressPercent}%`}}
+                        className="h-full rounded-full transition-all duration-300"
+                        style={{width: `${progressPercent}%`, backgroundColor: '#4ade80'}}
                     />
                 </div>
             </div>
