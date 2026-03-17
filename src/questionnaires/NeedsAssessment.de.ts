@@ -537,6 +537,7 @@ export const NeedsAssessmentDE: Questionnaire = {
                     linkId: 'contactMethod',
                     text: 'Wie m\u00f6chtest du am liebsten kontaktiert werden?',
                     type: 'open-choice',
+                    required: true,
                     disabledDisplay: 'protected',
                     enableWhen: [
                         {question: 'contactSafe', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-safe', code: 'yes'}},
@@ -553,8 +554,9 @@ export const NeedsAssessmentDE: Questionnaire = {
                 },
                 {
                     linkId: 'contactDetails',
-                    text: 'Deine Kontaktdaten',
+                    text: 'Deine Kontaktdaten (Telefonnummer, E-Mail oder Ansprechperson)',
                     type: 'string',
+                    required: true,
                     disabledDisplay: 'protected',
                     enableWhen: [
                         {question: 'contactSafe', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-safe', code: 'yes'}},

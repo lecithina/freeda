@@ -535,6 +535,7 @@ export const NeedsAssessmentEN: Questionnaire = {
                 },
                 {
                     linkId: 'contactMethod',
+                    required: true,
                     text: 'How would you prefer to be contacted?',
                     type: 'open-choice',
                     disabledDisplay: 'protected',
@@ -553,7 +554,8 @@ export const NeedsAssessmentEN: Questionnaire = {
                 },
                 {
                     linkId: 'contactDetails',
-                    text: 'Your contact details',
+                    required: true,
+                    text: 'Your contact details (phone number, email, or contact person)',
                     type: 'string',
                     disabledDisplay: 'protected',
                     enableWhen: [

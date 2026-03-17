@@ -535,6 +535,7 @@ export const NeedsAssessmentNE: Questionnaire = {
                 },
                 {
                     linkId: 'contactMethod',
+                    required: true,
                     text: '\u0924\u092a\u093e\u0908\u0902\u0932\u093e\u0908 \u0915\u0938\u0930\u0940 \u0938\u092e\u094d\u092a\u0930\u094d\u0915 \u0917\u0930\u094d\u0926\u093e \u0938\u092c\u0948\u092d\u0928\u094d\u0926\u093e \u092e\u0928 \u092a\u0930\u094d\u091b?',
                     type: 'open-choice',
                     disabledDisplay: 'protected',
@@ -553,6 +554,7 @@ export const NeedsAssessmentNE: Questionnaire = {
                 },
                 {
                     linkId: 'contactDetails',
+                    required: true,
                     text: '\u0924\u092a\u093e\u0908\u0902\u0915\u094b \u0938\u092e\u094d\u092a\u0930\u094d\u0915 \u0935\u093f\u0935\u0930\u0923',
                     type: 'string',
                     disabledDisplay: 'protected',
