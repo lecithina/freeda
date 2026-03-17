@@ -19,7 +19,13 @@ export const NeedsAssessmentDE: Questionnaire = {
             item: [
                 {
                     linkId: 'disclaimerText',
-                    text: 'Dieser Fragebogen hilft uns, deine Situation besser zu verstehen und einzusch\u00e4tzen, welche Unterst\u00fctzung im Moment sinnvoll und passend sein k\u00f6nnte. Du entscheidest selbst, welche Fragen du beantworten m\u00f6chtest. Alles ist freiwillig und wird vertraulich behandelt. Wenn du m\u00f6chtest, dass Hey Freeda dich direkt kontaktieren kann, kannst du deine Kontaktdaten am Ende angeben. Fragen, die du im Moment nicht beantworten m\u00f6chtest, kannst du einfach \u00fcberspringen. \uD83C\uDF38',
+                    text: 'Dieser Fragebogen hilft uns, deine Situation besser zu verstehen und einzusch\u00e4tzen, welche Unterst\u00fctzung im Moment sinnvoll und passend sein k\u00f6nnte. Du entscheidest selbst, welche Fragen du beantworten m\u00f6chtest. Alles ist freiwillig und wird vertraulich behandelt. Wenn du m\u00f6chtest, dass Hey Freeda dich direkt kontaktieren kann, kannst du deine Kontaktdaten am Ende angeben. Fragen, die du im Moment nicht beantworten m\u00f6chtest, kannst du einfach \u00fcberspringen.',
+                    type: 'display',
+                    disabledDisplay: 'protected'
+                },
+                {
+                    linkId: 'safetyHint',
+                    text: 'Bitte beantworte nur Fragen, die f\u00fcr dich im Moment sicher sind. Du kannst Fragen \u00fcberspringen und musst keine Kontaktdaten angeben.',
                     type: 'display',
                     disabledDisplay: 'protected'
                 }

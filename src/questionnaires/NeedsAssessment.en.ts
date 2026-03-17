@@ -22,6 +22,12 @@ export const NeedsAssessmentEN: Questionnaire = {
                     text: 'This questionnaire helps us better understand your situation and assess what kind of support might be meaningful and appropriate right now. You decide which questions you want to answer. Everything is voluntary and will be treated confidentially. If you would like Hey Freeda to contact you directly, you can provide your contact details at the end. Questions you do not want to answer right now can simply be skipped. \uD83C\uDF38',
                     type: 'display',
                     disabledDisplay: 'protected'
+                },
+                {
+                    linkId: 'safetyHint',
+                    text: 'Please only answer questions that feel safe for you right now. You can skip questions and do not have to provide contact details.',
+                    type: 'display',
+                    disabledDisplay: 'protected'
                 }
             ]
         },
