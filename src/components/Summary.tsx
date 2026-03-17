@@ -44,7 +44,15 @@ export default function Summary({groups, answers, onEdit, onSubmit, onBack}: Pro
                 </button>
             </div>
 
-            {groups.map((group, groupIdx) => (
+            {groups.map((group, groupIdx) => {
+                const answeredQuestions = group.item?.filter(q => {
+                    if (q.type === 'display') return false;
+                    const answer = answers.get(q.linkId) ?? [];
+                    return formatAnswer(answer) !== '';
+                }) ?? [];
+                if (answeredQuestions.length === 0) return null;
+
+                return (
                 <div
                     key={group.linkId}
                     className="rounded-lg border border-freeda-gray-light bg-freeda-gray p-4"
@@ -64,23 +72,21 @@ export default function Summary({groups, answers, onEdit, onSubmit, onBack}: Pro
                             if (question.type === 'display') return null;
                             const answer = answers.get(question.linkId) ?? [];
                             const display = formatAnswer(answer);
+                            if (!display) return null;
 
                             return (
                                 <div key={question.linkId}>
                                     <dt className="text-sm text-gray-400">{question.text}</dt>
                                     <dd className="text-white">
-                                        {display || (
-                                            <span className="italic text-gray-500">
-                                                {t('summary.noAnswer')}
-                                            </span>
-                                        )}
+                                        {display}
                                     </dd>
                                 </div>
                             );
                         })}
                     </dl>
                 </div>
-            ))}
+                );
+            })}
 
             <div className="flex justify-between pt-4">
                 <button
