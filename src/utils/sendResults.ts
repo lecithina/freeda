@@ -1,10 +1,6 @@
 import type {Question, QuestionnaireValue} from '@refinio/one.models/lib/models/QuestionnaireModel.js';
-import emailjs from '@emailjs/browser';
 
-// EmailJS configuration
-const EMAILJS_SERVICE_ID = 'service_heyfreeda';
-const EMAILJS_TEMPLATE_ID = 'template_heyfreeda';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+const RECIPIENT = 'mail@heyfreeda.com';
 
 function formatValue(answer: QuestionnaireValue[]): string {
     if (answer.length === 0) return '\u2014';
@@ -59,8 +55,8 @@ export function buildStructuredOutput(
 }
 
 /**
- * Send questionnaire results via EmailJS (background, reliable).
- * Falls back silently — the user always sees the thank-you page.
+ * Send questionnaire results via Formsubmit.co (no account needed).
+ * Sends in the background — the user always sees the thank-you page.
  */
 export function sendResultsEmail(
     groups: Question[],
@@ -69,16 +65,15 @@ export function sendResultsEmail(
 ): void {
     const body = buildStructuredOutput(groups, answers, language);
 
-    emailjs
-        .send(
-            EMAILJS_SERVICE_ID,
-            EMAILJS_TEMPLATE_ID,
-            {
-                to_email: 'mail@heyfreeda.com',
-                subject: `Hey Freeda \u2014 Needs Assessment [${new Date().toLocaleDateString()}]`,
-                message: body
-            },
-            EMAILJS_PUBLIC_KEY
-        )
-        .catch(err => console.error('EmailJS failed:', err));
+    const formData = new FormData();
+    formData.append('email', RECIPIENT);
+    formData.append('_subject', `Hey Freeda \u2014 Needs Assessment [${new Date().toLocaleDateString()}]`);
+    formData.append('message', body);
+    formData.append('_captcha', 'false');
+    formData.append('_template', 'box');
+
+    fetch(`https://formsubmit.co/ajax/${RECIPIENT}`, {
+        method: 'POST',
+        body: formData
+    }).catch(err => console.error('Form submission failed:', err));
 }

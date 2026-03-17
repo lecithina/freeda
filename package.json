@@ -10,7 +10,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "@refinio/one.core": "link:../one/packages/one.core",
     "@refinio/one.models": "link:../one/packages/one.models",
     "i18next": "^23.12.2",
