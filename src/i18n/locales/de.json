@@ -11,6 +11,7 @@
   "questionnaire": {
     "next": "Weiter",
     "back": "Zurück",
+    "review": "Angaben \u00fcberpr\u00fcfen",
     "submit": "Absenden",
     "required": "Dieses Feld ist erforderlich",
     "otherTextRequired": "Bitte beschreibe deine Antwort bei Sonstiges.",

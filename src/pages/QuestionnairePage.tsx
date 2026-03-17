@@ -58,6 +58,10 @@ function QuestionnairePageInner({
 
     const {state, setAnswer, goNext, goBack, goToStep, submit, reset, start, resume, groups} = flow;
 
+    useEffect(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }, [state.phase]);
+
     if (state.phase === 'welcome') {
         return (
             <div className="flex flex-col items-center gap-8 py-12 text-center">

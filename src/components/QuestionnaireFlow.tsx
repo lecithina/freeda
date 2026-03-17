@@ -114,7 +114,7 @@ export default function QuestionnaireFlow({state, setAnswer, goNext, goBack}: Pr
                     className="min-h-[44px] rounded-lg bg-freeda-pink px-6 py-3 font-bold text-white transition-colors hover:bg-freeda-pink-dark focus:outline-none focus:ring-2 focus:ring-freeda-pink focus:ring-offset-2 focus:ring-offset-freeda-black"
                 >
                     {currentStep === totalSteps - 1
-                        ? t('questionnaire.submit')
+                        ? t('questionnaire.review')
                         : t('questionnaire.next')}
                 </button>
             </div>

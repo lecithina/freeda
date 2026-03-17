@@ -11,6 +11,7 @@
   "questionnaire": {
     "next": "Next",
     "back": "Back",
+    "review": "Review answers",
     "submit": "Submit",
     "required": "This field is required",
     "otherTextRequired": "Please describe your answer for \"Other\".",

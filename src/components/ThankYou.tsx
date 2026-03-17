@@ -9,9 +9,9 @@ export default function ThankYou({onNewQuestionnaire}: Props) {
 
     return (
         <div className="flex flex-col items-center gap-8 py-12 text-center">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-freeda-pink/20">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-green-500/20">
                 <svg
-                    className="h-10 w-10 text-freeda-pink"
+                    className="h-10 w-10 text-green-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
