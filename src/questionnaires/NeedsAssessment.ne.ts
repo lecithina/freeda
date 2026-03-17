@@ -534,10 +534,11 @@ export const NeedsAssessmentNE: Questionnaire = {
                     ]
                 },
                 {
+                {
                     linkId: 'contactMethod',
+                    text: 'तपाईंलाई कसरी सम्पर्क गर्न मन पर्छ?',
+                    type: 'choice',
                     required: true,
-                    text: '\u0924\u092a\u093e\u0908\u0902\u0932\u093e\u0908 \u0915\u0938\u0930\u0940 \u0938\u092e\u094d\u092a\u0930\u094d\u0915 \u0917\u0930\u094d\u0926\u093e \u0938\u092c\u0948\u092d\u0928\u094d\u0926\u093e \u092e\u0928 \u092a\u0930\u094d\u091b?',
-                    type: 'open-choice',
                     disabledDisplay: 'protected',
                     enableWhen: [
                         {question: 'contactSafe', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-safe', code: 'yes'}},
@@ -545,24 +546,45 @@ export const NeedsAssessmentNE: Questionnaire = {
                     ],
                     enableBehavior: 'any',
                     answerOption: [
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: '1', display: '\u0935\u094d\u0939\u093e\u091f\u094d\u0938\u0905\u094d\u092f\u093e\u092a'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: '2', display: '\u092b\u094b\u0928'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: '3', display: '\u0908-\u092e\u0947\u0932'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: '4', display: '\u0938\u0902\u0938\u094d\u0925\u093e \u092e\u093e\u0930\u094d\u092b\u0924'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: '5', display: '\u092a\u091b\u093f \u0924\u092f \u0917\u0930\u094c\u0902'}}
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: 'whatsapp', display: 'WhatsApp'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: 'viber', display: 'Viber'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: 'phone', display: 'फोन'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: 'email', display: 'इमेल'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: 'org', display: 'सम्पर्क व्यक्ति मार्फत'}}
                     ]
                 },
                 {
-                    linkId: 'contactDetails',
-                    required: true,
-                    text: '\u0924\u092a\u093e\u0908\u0902\u0915\u094b \u0938\u092e\u094d\u092a\u0930\u094d\u0915 \u0935\u093f\u0935\u0930\u0923',
+                    linkId: 'contactPhone',
+                    text: 'तपाईंको फोन नम्बर',
                     type: 'string',
+                    required: true,
                     disabledDisplay: 'protected',
                     enableWhen: [
-                        {question: 'contactSafe', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-safe', code: 'yes'}},
-                        {question: 'contactSafe', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-safe', code: 'org'}}
+                        {question: 'contactMethod', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', code: 'whatsapp'}},
+                        {question: 'contactMethod', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', code: 'viber'}},
+                        {question: 'contactMethod', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', code: 'phone'}}
                     ],
                     enableBehavior: 'any'
+                },
+                {
+                    linkId: 'contactEmail',
+                    text: 'तपाईंको इमेल ठेगाना',
+                    type: 'string',
+                    required: true,
+                    disabledDisplay: 'protected',
+                    enableWhen: [
+                        {question: 'contactMethod', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', code: 'email'}}
+                    ]
+                },
+                {
+                    linkId: 'contactPerson',
+                    text: 'सम्पर्क व्यक्तिको नाम र उनको फोन नम्बर वा इमेल',
+                    type: 'string',
+                    required: true,
+                    disabledDisplay: 'protected',
+                    enableWhen: [
+                        {question: 'contactMethod', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', code: 'org'}}
+                    ]
                 }
             ]
         }

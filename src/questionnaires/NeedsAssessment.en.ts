@@ -535,9 +535,9 @@ export const NeedsAssessmentEN: Questionnaire = {
                 },
                 {
                     linkId: 'contactMethod',
-                    required: true,
                     text: 'How would you prefer to be contacted?',
-                    type: 'open-choice',
+                    type: 'choice',
+                    required: true,
                     disabledDisplay: 'protected',
                     enableWhen: [
                         {question: 'contactSafe', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-safe', code: 'yes'}},
@@ -545,24 +545,45 @@ export const NeedsAssessmentEN: Questionnaire = {
                     ],
                     enableBehavior: 'any',
                     answerOption: [
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: '1', display: 'WhatsApp'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: '2', display: 'phone'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: '3', display: 'email'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: '4', display: 'through an organisation'}},
-                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: '5', display: 'decide later'}}
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: 'whatsapp', display: 'WhatsApp'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: 'viber', display: 'Viber'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: 'phone', display: 'phone'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: 'email', display: 'email'}},
+                        {valueCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', version: '1.0', code: 'org', display: 'through a contact person'}}
                     ]
                 },
                 {
-                    linkId: 'contactDetails',
-                    required: true,
-                    text: 'Your contact details (phone number, email, or contact person)',
+                    linkId: 'contactPhone',
+                    text: 'Your phone number',
                     type: 'string',
+                    required: true,
                     disabledDisplay: 'protected',
                     enableWhen: [
-                        {question: 'contactSafe', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-safe', code: 'yes'}},
-                        {question: 'contactSafe', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-safe', code: 'org'}}
+                        {question: 'contactMethod', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', code: 'whatsapp'}},
+                        {question: 'contactMethod', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', code: 'viber'}},
+                        {question: 'contactMethod', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', code: 'phone'}}
                     ],
                     enableBehavior: 'any'
+                },
+                {
+                    linkId: 'contactEmail',
+                    text: 'Your email address',
+                    type: 'string',
+                    required: true,
+                    disabledDisplay: 'protected',
+                    enableWhen: [
+                        {question: 'contactMethod', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', code: 'email'}}
+                    ]
+                },
+                {
+                    linkId: 'contactPerson',
+                    text: 'Name of the contact person and their phone number or email',
+                    type: 'string',
+                    required: true,
+                    disabledDisplay: 'protected',
+                    enableWhen: [
+                        {question: 'contactMethod', operator: '=', answerCoding: {system: 'http://heyfreeda.com/questionnaire/needs-assessment/coding/contact-method', code: 'org'}}
+                    ]
                 }
             ]
         }
