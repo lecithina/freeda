@@ -37,6 +37,15 @@ export default function ThankYou({onNewQuestionnaire}: Props) {
                     ))}
             </div>
 
+            <a
+                href="https://www.heyfreeda.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="min-h-[44px] rounded-lg bg-freeda-pink px-8 py-3 font-bold text-white transition-colors hover:bg-freeda-pink-dark focus:outline-none focus:ring-2 focus:ring-freeda-pink focus:ring-offset-2 focus:ring-offset-freeda-black"
+            >
+                {t('thankYou.learnMore')}
+            </a>
+
             <button
                 type="button"
                 onClick={onNewQuestionnaire}
