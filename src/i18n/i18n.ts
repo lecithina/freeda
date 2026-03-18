@@ -14,6 +14,7 @@ i18n.use(LanguageDetector)
             de: {translation: de},
             ne: {translation: ne}
         },
+        lng: 'en',
         fallbackLng: 'en',
         interpolation: {
             escapeValue: false
