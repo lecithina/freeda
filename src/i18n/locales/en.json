@@ -1,8 +1,8 @@
 {
   "welcome": {
     "title": "Hey Freeda",
-    "subtitle": "Needs Assessment Questionnaire",
-    "description": "This questionnaire helps us understand your needs so we can provide better support.",
+    "subtitle": "Questionnaire",
+    "description": "Welcome to Hey Freeda. It's great that you're here. With this questionnaire, we would like to better understand what you need right now and what kind of support might fit your situation.",
     "start": "Start",
     "resume": "Resume",
     "startNew": "Start New",
