@@ -19,7 +19,7 @@ export const NeedsAssessmentDE: Questionnaire = {
             item: [
                 {
                     linkId: 'disclaimerText',
-                    text: 'Bitte beantworte nur die Fragen, die sich f\u00fcr dich im Moment sicher anf\u00fchlen. Alles ist freiwillig. Du kannst Fragen \u00fcberspringen und musst keine Kontaktdaten angeben. Wenn du m\u00f6chtest, dass Hey Freeda dich direkt kontaktieren kann, kannst du deine Kontaktdaten am Ende angeben. Wir gehen mit deinen Angaben sorgf\u00e4ltig, respektvoll und vertraulich um.',
+                    text: 'Bitte beantworte nur Fragen, die du im Moment sicher beantworten kannst. Alles ist freiwillig, und du kannst Fragen auch \u00fcberspringen. Wenn du m\u00f6chtest, dass Hey Freeda dich pers\u00f6nlich kontaktiert und mit dir oder deiner Kontaktperson passende Unterst\u00fctzung bespricht, gib bitte am Ende deine Telefonnummer oder E-Mail an. Ohne Kontaktdaten k\u00f6nnen wir deine Antworten nur anonym auswerten und f\u00fcr die Weiterentwicklung unserer Angebote nutzen. Wir behandeln alle deine Angaben vertraulich.',
                     type: 'display',
                     disabledDisplay: 'protected'
                 }

@@ -19,7 +19,7 @@ export const NeedsAssessmentEN: Questionnaire = {
             item: [
                 {
                     linkId: 'disclaimerText',
-                    text: 'Please only answer the questions that feel safe for you right now. Everything is voluntary. You can skip questions and do not have to provide contact details. If you would like Hey Freeda to contact you directly, you can provide your contact details at the end. We treat your information carefully, respectfully, and confidentially.',
+                    text: 'Please only answer questions that you can safely answer right now. Everything is voluntary, and you can also skip questions. If you would like Hey Freeda to contact you personally and discuss suitable support with you or your contact person, please provide your phone number or email at the end. Without contact details, we can only evaluate your answers anonymously and use them to improve our programmes. We treat all your information confidentially.',
                     type: 'display',
                     disabledDisplay: 'protected'
                 },
