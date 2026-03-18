@@ -8,6 +8,7 @@ import type {
 } from '@refinio/one.models/lib/models/QuestionnaireModel.js';
 import type QuestionnaireModel from '@refinio/one.models/lib/models/QuestionnaireModel.js';
 import {sendResultsEmail} from '../utils/sendResults.js';
+import {trackEvent} from '../utils/tracking.js';
 
 export type FlowPhase = 'welcome' | 'questions' | 'summary' | 'thankyou';
 
@@ -240,15 +241,23 @@ export function useQuestionnaireFlow(
         }
 
         if (currentStep < totalSteps - 1) {
-            setCurrentStep(s => s + 1);
+            const nextStep = currentStep + 1;
+            setCurrentStep(nextStep);
             setValidationErrors(new Map());
+            trackEvent('section_completed', {
+                section: currentStep + 1,
+                totalSections: totalSteps,
+                sectionName: currentGroup?.text ?? '',
+                language: questionnaire.language ?? 'en'
+            });
             await autoSave();
         } else {
             // Last step — go to summary
             setPhase('summary');
+            trackEvent('review_reached', {language: questionnaire.language ?? 'en'});
             await autoSave();
         }
-    }, [currentStep, totalSteps, visibleQuestions, answers, autoSave]);
+    }, [currentStep, totalSteps, visibleQuestions, answers, autoSave, currentGroup, questionnaire]);
 
     const goBack = useCallback(() => {
         if (phase === 'summary') {
@@ -271,8 +280,9 @@ export function useQuestionnaireFlow(
         await questionnaireModel.postResponse(response, 'NeedsAssessment', incompleteType);
         await questionnaireModel.markIncompleteResponseAsComplete(incompleteType);
 
-        // Send results via EmailJS in the background (fire and forget)
+        // Send results in the background (fire and forget)
         sendResultsEmail(groups, answers, questionnaire.language ?? 'en');
+        trackEvent('questionnaire_submitted', {language: questionnaire.language ?? 'en'});
 
         setPhase('thankyou');
     }, [questionnaire, answers, questionnaireModel, incompleteType, groups]);
@@ -282,7 +292,8 @@ export function useQuestionnaireFlow(
         setCurrentStep(0);
         setValidationErrors(new Map());
         setPhase('questions');
-    }, []);
+        trackEvent('questionnaire_started', {language: questionnaire.language ?? 'en'});
+    }, [questionnaire]);
 
     const resume = useCallback(async () => {
         const data = await questionnaireModel.incompleteResponse(incompleteType);
