@@ -62,5 +62,19 @@
   "loading": "Loading...",
   "error": {
     "initFailed": "Initialization Error"
+  },
+  "assessment": {
+    "titleHighlight": "Stage",
+    "titleNumber": "2",
+    "subtitle": "Internal Assessment",
+    "description": "Economic and vulnerability assessment based on the Sahakarya Nepal form.",
+    "start": "Start assessment",
+    "resume": "Resume",
+    "startNew": "Start new",
+    "resumePrompt": "There is an incomplete assessment. Would you like to continue?",
+    "completed": "Assessment completed",
+    "completedMessage": "The internal assessment has been submitted successfully.",
+    "newAssessment": "New assessment",
+    "printReport": "Print report"
   }
 }

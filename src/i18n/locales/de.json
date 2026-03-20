@@ -2,7 +2,7 @@
   "welcome": {
     "title": "Hey Freeda",
     "subtitle": "Fragebogen",
-    "description": "Willkommen bei Hey Freeda. Sch\u00f6n, dass du da bist. Mit diesem Fragebogen m\u00f6chten wir besser verstehen, was du gerade brauchst und welche Unterst\u00fctzung zu deiner Situation passen k\u00f6nnte.",
+    "description": "Willkommen bei Hey Freeda. Schön, dass du da bist. Mit diesem Fragebogen möchten wir besser verstehen, was du gerade brauchst und welche Unterstützung zu deiner Situation passen könnte.",
     "start": "Starten",
     "resume": "Fortsetzen",
     "startNew": "Neu starten",
@@ -62,5 +62,19 @@
   "loading": "Laden...",
   "error": {
     "initFailed": "Initialisierungsfehler"
+  },
+  "assessment": {
+    "titleHighlight": "Stufe",
+    "titleNumber": "2",
+    "subtitle": "Interne Bewertung",
+    "description": "Wirtschafts- und Vulnerabilitätserhebung basierend auf dem Sahakarya-Nepal-Formular.",
+    "start": "Bewertung starten",
+    "resume": "Fortfahren",
+    "startNew": "Neu starten",
+    "resumePrompt": "Es gibt eine unvollständige Bewertung. Möchten Sie fortfahren?",
+    "completed": "Bewertung abgeschlossen",
+    "completedMessage": "Die interne Bewertung wurde erfolgreich eingereicht.",
+    "newAssessment": "Neue Bewertung",
+    "printReport": "Bericht drucken"
   }
 }

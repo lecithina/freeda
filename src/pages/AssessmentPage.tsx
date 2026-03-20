@@ -1,3 +1,4 @@
+import {useTranslation} from 'react-i18next';
 import {useFreeda} from '../model/FreedaContext.js';
 import {useQuestionnaireFlow} from '../hooks/useQuestionnaireFlow.js';
 import QuestionnaireFlow from '../components/QuestionnaireFlow.js';
@@ -10,15 +11,21 @@ import {sendAssessmentResults} from '../utils/sendAssessmentResults.js';
 const INCOMPLETE_TYPE = 'internal-assessment';
 
 export default function AssessmentPage() {
+    const {i18n} = useTranslation();
     const model = useFreeda();
     const [questionnaire, setQuestionnaire] = useState<Questionnaire | null>(null);
 
     useEffect(() => {
         model.questionnaireModel
-            .questionnaireByName('InternalAssessment', 'de')
+            .questionnaireByName('InternalAssessment', i18n.language)
             .then(setQuestionnaire)
-            .catch(console.error);
-    }, [model]);
+            .catch(() => {
+                model.questionnaireModel
+                    .questionnaireByName('InternalAssessment', 'de')
+                    .then(setQuestionnaire)
+                    .catch(console.error);
+            });
+    }, [model, i18n.language]);
 
     if (!questionnaire) {
         return (
@@ -42,6 +49,7 @@ function AssessmentPageInner({
     questionnaire: Questionnaire;
     model: ReturnType<typeof useFreeda>;
 }) {
+    const {t} = useTranslation();
     const flow = useQuestionnaireFlow(
         questionnaire,
         model.questionnaireModel,
@@ -52,7 +60,6 @@ function AssessmentPageInner({
 
     const submit = async () => {
         await baseSubmit();
-        // Send assessment results in the background (fire and forget)
         sendAssessmentResults(groups, state.answers);
     };
 
@@ -64,39 +71,35 @@ function AssessmentPageInner({
         return (
             <div className="flex flex-col items-center gap-8 py-12 text-center">
                 <h1 className="text-4xl font-bold uppercase tracking-wide">
-                    <span className="text-freeda-pink">Stufe </span>2
+                    <span className="text-freeda-pink">{t('assessment.titleHighlight')} </span>{t('assessment.titleNumber')}
                 </h1>
-                <p className="max-w-md text-lg text-gray-300">Interne Bewertung</p>
-                <p className="max-w-md text-gray-400">
-                    Wirtschafts- und Vulnerabilitätserhebung basierend auf dem Sahakarya-Nepal-Formular.
-                </p>
+                <p className="max-w-md text-lg text-gray-300">{t('assessment.subtitle')}</p>
+                <p className="max-w-md text-gray-400">{t('assessment.description')}</p>
 
                 {state.hasIncomplete ? (
                     <div className="flex flex-col items-center gap-4">
-                        <p className="text-sm text-gray-400">
-                            Es gibt eine unvollständige Bewertung. Möchten Sie fortfahren?
-                        </p>
+                        <p className="text-sm text-gray-400">{t('assessment.resumePrompt')}</p>
                         <div className="flex gap-4">
                             <button
                                 onClick={resume}
-                                className="min-h-[44px] min-w-[140px] rounded-lg bg-freeda-pink px-6 py-3 font-bold uppercase tracking-wide text-white transition-colors hover:bg-freeda-pink-dark focus:outline-none focus:ring-2 focus:ring-freeda-pink focus:ring-offset-2 focus:ring-offset-freeda-black"
+                                className="min-h-[44px] min-w-[140px] rounded-lg bg-freeda-pink px-6 py-3 font-bold uppercase tracking-wide text-white transition-colors hover:bg-freeda-pink-dark"
                             >
-                                Fortfahren
+                                {t('assessment.resume')}
                             </button>
                             <button
                                 onClick={start}
-                                className="min-h-[44px] min-w-[140px] rounded-lg border border-freeda-gray-light px-6 py-3 font-bold uppercase tracking-wide text-gray-300 transition-colors hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-freeda-pink focus:ring-offset-2 focus:ring-offset-freeda-black"
+                                className="min-h-[44px] min-w-[140px] rounded-lg border border-freeda-gray-light px-6 py-3 font-bold uppercase tracking-wide text-gray-300 transition-colors hover:border-gray-500"
                             >
-                                Neu starten
+                                {t('assessment.startNew')}
                             </button>
                         </div>
                     </div>
                 ) : (
                     <button
                         onClick={start}
-                        className="min-h-[44px] min-w-[200px] rounded-lg bg-freeda-pink px-8 py-3 text-lg font-bold uppercase tracking-wide text-white transition-colors hover:bg-freeda-pink-dark focus:outline-none focus:ring-2 focus:ring-freeda-pink focus:ring-offset-2 focus:ring-offset-freeda-black"
+                        className="min-h-[44px] min-w-[200px] rounded-lg bg-freeda-pink px-8 py-3 text-lg font-bold uppercase tracking-wide text-white transition-colors hover:bg-freeda-pink-dark"
                     >
-                        Bewertung starten
+                        {t('assessment.start')}
                     </button>
                 )}
             </div>
@@ -106,18 +109,14 @@ function AssessmentPageInner({
     if (state.phase === 'thankyou') {
         return (
             <div className="flex flex-col items-center gap-8 py-12 text-center">
-                <h2 className="text-3xl font-bold uppercase tracking-wide">
-                    Bewertung abgeschlossen
-                </h2>
-                <p className="max-w-md text-gray-300">
-                    Die interne Bewertung wurde erfolgreich eingereicht.
-                </p>
+                <h2 className="text-3xl font-bold uppercase tracking-wide">{t('assessment.completed')}</h2>
+                <p className="max-w-md text-gray-300">{t('assessment.completedMessage')}</p>
                 <button
                     type="button"
                     onClick={reset}
-                    className="min-h-[44px] rounded-lg border border-freeda-pink px-8 py-3 font-bold text-freeda-pink transition-colors hover:bg-freeda-pink hover:text-white focus:outline-none focus:ring-2 focus:ring-freeda-pink focus:ring-offset-2 focus:ring-offset-freeda-black"
+                    className="min-h-[44px] rounded-lg border border-freeda-pink px-8 py-3 font-bold text-freeda-pink transition-colors hover:bg-freeda-pink hover:text-white"
                 >
-                    Neue Bewertung
+                    {t('assessment.newAssessment')}
                 </button>
             </div>
         );
@@ -139,7 +138,7 @@ function AssessmentPageInner({
                         onClick={() => window.print()}
                         className="min-h-[44px] rounded-lg border border-freeda-gray-light px-6 py-3 font-medium text-gray-300 transition-colors hover:border-gray-500"
                     >
-                        Bericht drucken
+                        {t('assessment.printReport')}
                     </button>
                 </div>
             </div>
